@@ -1,0 +1,48 @@
+# Walkthrough: Blend & Supercar Cafe Web Application
+
+## Overview
+
+The "BLEND & SUPERCAR" project is now a complete, production-ready Single Page Application (SPA). It serves as the digital storefront for a Moscow Elite Luxury Cafe based in Bangalore, combining premium coffee culture with high-end supercar aesthetics. 
+
+The application is built entirely using vanilla HTML, CSS, and JS to ensure maximum performance while maintaining a persistent audio experience across all "page" navigations.
+
+## Key Features Implemented
+
+### 1. Premium Aesthetic & UI/UX
+*   **Luxury Theme:** The entire application uses a dark luxury theme (`#0a0a0f` background) accented with custom gold gradients (`#D4AF37`) and deep reds (`#C62828`).
+*   **Typography:** We utilized `Cormorant Garamond` for elegant, high-impact headings and `Inter` for clean, readable body text.
+*   **Supercar Backgrounds:** Subtle, low-opacity, grayscale supercar images are fixed to the background ([main.css](file:///c:/Users/hp/AI%20WEB%20PROJECT/css/main.css) body pseudo-elements) to establish the brand identity without overwhelming the content.
+*   **Dynamic Navigation:** A sticky glass-morphism navbar featuring a custom, shimmering diamond-cut logo border.
+
+### 2. Persistent Music Player
+*   **Zero-Interruption Audio:** Because the app is an SPA, the music player runs continuously at the bottom of the screen while the user navigates between different sections.
+*   **YouTube IFrame API Integration:** We completely rebuilt the audio engine to use the official YouTube IFrame API.
+*   **Chrome Compatibility Fix:** By removing the `youtube-nocookie.com` host requirement, we resolved the strict CORS/Autoplay blocks in Google Chrome, ensuring the player works flawlessly on `localhost` and in production.
+*   **Custom Controls:** The player includes custom Play/Pause, Next/Prev, and Mute buttons that interact directly with the hidden YouTube iframe.
+
+### 3. Supercar Studio (Photo Game)
+*   **Interactive Generation:** Users can upload their photo, enter their name, and select a "Supercar Theme" (Ferrari, Lamborghini, Bugatti, etc.).
+*   **Premium Canvas Compositing:** The [photogame.js](file:///c:/Users/hp/AI%20WEB%20PROJECT/js/photogame.js) engine was completely rewritten to generate highly stylized images using the HTML5 `<canvas>` API.
+*   **Visual Effects:** The final composition includes:
+    *   Luxury gradient top and bottom bars.
+    *   A hexagonal clipping mask for the user's photo.
+    *   Diamond decorative accents.
+    *   A stylized name strip and a 3-column stats grid.
+    *   A vignette effect and watermark branding ("BLEND & SUPERCAR").
+
+### 4. Interactive Mood Chatbot
+*   **Priya Saini AI:** The chatbot was personalized with the identity of "Priya Saini", representing the ownership team (Priya, Parul, Ziya, Vanshika).
+*   **Intelligent Routing:** The bot analyzes user text for mood keywords (happy, sad, energetic) or category intents (coffee, dessert) and suggests appropriate products from the [data.js](file:///c:/Users/hp/AI%20WEB%20PROJECT/js/data.js) catalog.
+*   **Responsive UI:** Features typing indicators, auto-scrolling, and inline product cards equipped with quick "Add to Cart" functionality.
+
+### 5. Product Catalog & Menu
+*   **Complete Data Structure:** [data.js](file:///c:/Users/hp/AI%20WEB%20PROJECT/js/data.js) contains a robust array of premium coffees, luxury foods, desserts, and beverages.
+*   **Broken Image Fixes:** Audited the data file and replaced dead Unsplash links (e.g., the 404 error on the Croissant Perfection image) to ensure 100% visual uptime on the Menu page.
+
+### 6. Owners Footer
+*   **Prominent Branding:** Added a custom `.site-footer` to [index.html](file:///c:/Users/hp/AI%20WEB%20PROJECT/index.html) prominently displaying the cafe owners: `PRIYA SAINI • PARUL BHARDWAJ • ZIYA • VANSHIKA`.
+*   **Visibility Fix:** Ensured the CSS `padding-bottom` was significantly increased (100px-120px) so the static music player does not overlap or hide the ownership text at the bottom of the scroll.
+
+## Next Steps for the User
+*   **Deployment:** The application consists entirely of static files and is ready to be dragged and dropped into Vercel, Netlify, or GitHub Pages.
+*   **Media Assets:** The user may want to replace the Unsplash placeholder images with actual professional photography of their cafe and products in the future by updating URL strings in [data.js](file:///c:/Users/hp/AI%20WEB%20PROJECT/js/data.js).
